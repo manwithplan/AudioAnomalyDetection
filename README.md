@@ -95,6 +95,10 @@ For this the ideal cluster would look like this.
 Where there are 3 clusters, 1 containing almost all normal samples, one containing almost all abnormal samples
 and on containg a smaller sample of both, describing a transitory phase.
 
+Rather than use scoring metrics, as was done in a previous report when working with Supervised Learning, in these cases
+the risk of overfitting is not present and a simple accuracy score combined with the graph distribution as above had 
+the preference.
+
 Furthermore, on each model the elbow method was used to calculate both optimal number of clusters and which feature
 to use. In the examples below we can see the difference between using *mel spectrograms* and *mel frequency cepstral
 coëfficient*
@@ -132,15 +136,113 @@ When plotting the same clusters to the model types however the results were much
 This shows an almost perfect distribution of 1 model per bar. From this followed the conclusion that clustering should happen 
 for each model seperately. When applying the clustering on each model the result looked like this:
 
-![](Images/KMeans_anomaly distribution_per_model-Fan.png)
+![](Images/KMeans_anomaly_distribution_per_model-Fan.png)
 
 Where the first graph still seems to give a meaningless grouping, the last 3 are almost perfect representations of the result 
 we were looking for, as described above. If you look at the Model Types section, you can see this corresponds to the results 
 found there.
 
+At times the distinction between the different clusters could be improved by working with more clusters.
 
+![](Images/Valve.png)
+![](Images/Valve_more_clusters.png)
 
+In the first graph no division can be made between transitory state, normal and abnormal.
+When increasing the number of clusters, we can group the clusters together and get a meaningful result that way.
 
+### Choice of model
 
+For all machines and model types an optimization was run for both feature type and model type.
+For the valves the most meaningful model was the Gaussian Mixture Model, possibly due to it's suitability to work
+with a large set of features. For all others the KMeans algorithms gave the best result.
 
+### Results
+
+The following results were achieved for all machine types:
+
+![](Images/KMeans_anomaly_distribution_per_model-Fan.png)
+
+<div align="center">
+ 
+|  Fan       | Model 1  | Model 2  | Model 3  | Model 4  |
+| ---------- | -------- | -------- | -------- | -------- | 
+| Normal     | 67%      | 100%     | 100%     | 100%     |
+| Abnormal   | 73%      | 100%     | 99%      | 100%     |
+| transitory | 71%      | 75%      | 71%      | 58%      |
+ 
+</div>
+ 
+![](Images/Anomaly_Distribution_per_Model type-Slider.png)
+ 
+<div align="center">
+ 
+|  Slider    | Model 1  | Model 2  | Model 3  | Model 4  |
+| ---------- | -------- | -------- | -------- | -------- | 
+| Normal     | 100%     | 98%      | 75%      | 88%      |
+| Abnormal   | 97%      | 99%      | 78%      | 86%      |
+| transitory | 99%      | 94%      | 71%      | 84%      |
+ 
+</div>
+ 
+![](Images/anomaly_distribution_per_model_using_mel_spectrogram_instead_of_cepstral_coëfficient-Pump.png)
+ 
+<div align="center">
+ 
+|  Pump      | Model 1  | Model 2  | Model 3  | Model 4  |
+| ---------- | -------- | -------- | -------- | -------- | 
+| Normal     | 100%     | 92%      | 100%     | 100%     |
+| Abnormal   | 97%      | 100%     | 98%      | 95%      |
+| transitory | 94%      | 95%      | 99%      | 92%      |
+ 
+</div>
+ 
+![](Images/KMeans_for_the_different_Valve_models-16_clusters.png)
+ 
+<div align="center">
+ 
+|  Valve     | Model 1  | Model 2  | Model 3  | Model 4  |
+| ---------- | -------- | -------- | -------- | -------- | 
+| Normal     | 99%      | 80%      | 90%      | 90%      |
+| Abnormal   | 99%      | 10%      | 10%      | 10%      |
+| transitory | 70%      | 85%      | 88%      | 90%      |
+ 
+</div>
+
+### Interpretation
+
+In this case an optimal result would have amost perfect normal an abnormal scores and a 
+Transitory phase between 50% and 95%. My conclusion is that allthough far from perfect for all the 
+machines, using Unsupervised Learning for the model and machine types for which good results
+are achieved detection can be almost perfect for both normal, abnormal and a transitory phase.
+
+Concretely this is valid for :
+- model 2,3 and 4 of the valves 
+- model 1 and 2 of the sliders
+- all models of the pumps
+- None for the valves.
+
+These results and models can be implemented in a tree like structure where detection for each machine and model
+type will have it's own optimized detection and prediction. There is reason to be confident for a near perfect
+detection for almost all of the equipment using a combination of supervised and unsupervised learning.
+
+### Technical Details
+
+This software makes extensive use of the following Python libraries: 
+
+- sklearn
+- plotly
+- pandas
+- numpy
+- matplotlib
+- os
+- librosa
+- ast
+- tqdm
+
+### Installation
+
+- Clone the repository / download the files. Open your terminal and navigate to this directory.
+- Install dependencies with `pip install -r requirements.txt`.
+- Open the notebook of choice, and execute all the cells.
+- Watch the magic happen!
 
