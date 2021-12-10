@@ -170,7 +170,7 @@ The following results were achieved for all machine types:
 | Abnormal   | 73%      | 100%     | 99%      | 100%     |
 | transitory | 71%      | 75%      | 71%      | 58%      |
  
-<center>
+</center>
  
 ![](Images/Anomaly_Distribution_per_Model type-Slider.png)
  
@@ -182,7 +182,7 @@ The following results were achieved for all machine types:
 | Abnormal   | 97%      | 99%      | 78%      | 86%      |
 | transitory | 99%      | 94%      | 71%      | 84%      |
  
-<center>
+</center>
  
 ![](Images/anomaly_distribution_per_model_using_mel_spectrogram_instead_of_cepstral_coëfficient-Pump.png)
  
@@ -194,7 +194,7 @@ The following results were achieved for all machine types:
 | Abnormal   | 97%      | 100%     | 98%      | 95%      |
 | transitory | 94%      | 95%      | 99%      | 92%      |
  
-<center>
+</center>
  
 ![](Images/KMeans_for_the_different_Valve_models-16_clusters.png)
  
@@ -206,7 +206,7 @@ The following results were achieved for all machine types:
 | Abnormal   | 99%      | 10%      | 10%      | 10%      |
 | transitory | 70%      | 85%      | 88%      | 90%      |
  
-<center>
+</center>
 
 ### Interpretation
 
