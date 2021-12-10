@@ -90,7 +90,7 @@ a *transitory* state in which the machines should have maintenance in stead of r
 
 For this the ideal cluster would look like this.
 
-![](ideal dist.png)
+![](Images/ideal dist.png)
 
 Where there are 3 clusters, 1 containing almost all normal samples, one containing almost all abnormal samples
 and on containg a smaller sample of both, describing a transitory phase.
@@ -99,8 +99,8 @@ Furthermore, on each model the elbow method was used to calculate both optimal n
 to use. In the examples below we can see the difference between using *mel spectrograms* and *mel frequency cepstral
 coëfficient*
 
-![](elbow Curve - mel_spect - Fans.png)
-![](elbow Curve - mfcc - Fans.png)
+![](Images/elbow Curve - mel_spect - Fans.png)
+![](Images/elbow Curve - mfcc - Fans.png)
 
 For each algorithm the optimal types were selected, by finding the best *bend* opf the curve as it represents the most 
 significantly distinct clusters.
@@ -111,28 +111,28 @@ To determine the best approach, the first step was to run through all the data a
 When grouping into what was calculated as the optimal amount of clusters, and plotting this against the prevalence
 of anomalies the results were poor.
 
-![](Anomaly distribution per cluster.png)
+![](Images/Anomaly distribution per cluster.png)
 
 When plotting the same clusters to the machine types, better results were found:
 
-![](machine detection accuracy per cluster.png)
+![](Images/machine detection accuracy per cluster.png)
 
 Not perfect but the clusters do seem to largely group by machine type. From this was concluded to continue working
 with each machine subset seperately. 
 
 Starting with the Fan machines this was the result:
 
-![](anomaly distribution accuracy per cluster - Fan.png)
+![](Images/anomaly distribution accuracy per cluster - Fan.png)
 
 Because each bar has an almost equal distribution between normal and abnormal samples again this turned out to be useless.
 When plotting the same clusters to the model types however the results were much better:
 
-![](model distribution accuracy per cluster - Fan.png)
+![](Images/model distribution accuracy per cluster - Fan.png)
 
 This shows an almost perfect distribution of 1 model per bar. From this followed the conclusion that clustering should happen 
 for each model seperately. When applying the clustering on each model the result looked like this:
 
-![](KMeans anomaly distribution per model - Fan.png)
+![](Images/KMeans anomaly distribution per model - Fan.png)
 
 Where the first graph still seems to give a meaningless grouping, the last 3 are almost perfect representations of the result 
 we were looking for, as described above. If you look at the Model Types section, you can see this corresponds to the results 
