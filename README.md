@@ -132,7 +132,7 @@ When plotting the same clusters to the model types however the results were much
 This shows an almost perfect distribution of 1 model per bar. From this followed the conclusion that clustering should happen 
 for each model seperately. When applying the clustering on each model the result looked like this:
 
-![](Images/KMeans_anomaly_distribution_per_model-Fan.png)
+![](Images/KMeans_anomaly distribution_per_model-Fan.png)
 
 Where the first graph still seems to give a meaningless grouping, the last 3 are almost perfect representations of the result 
 we were looking for, as described above. If you look at the Model Types section, you can see this corresponds to the results 
