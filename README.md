@@ -221,6 +221,10 @@ Concretely this is valid for :
 - all models of the pumps
 - None for the valves.
 
+These results and models can be implemented in a tree like structure where detection for each machine and model
+type will have it's own optimized detection and prediction. There is reason to be confident for a near perfect
+detection for almost all of the equipment using a combination of supervised and unsupervised learning.
+
 ### Technical Details
 
 This software makes extensive use of the following Python libraries: 
