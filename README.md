@@ -107,7 +107,7 @@ spectrogram         |  mfcc
 :-------------------------:|:-------------------------:
 ![](Images/elbow_Curve-mel_spect-Fans.png) | ![](Images/elbow_Curve-mfcc-Fans.png)
 
-For each algorithm the optimal types were selected, by finding the best *bend* opf the curve as it represents the most 
+For each algorithm the optimal types were selected, by finding the best *bend* of the curve as it represents the most 
 significantly distinct clusters.
 
 ### Initial exploration
@@ -216,7 +216,7 @@ Transitory phase between 50% and 95%. My conclusion is that allthough far from p
 machines, using Unsupervised Learning for the model and machine types for which good results
 are achieved detection can be almost perfect for both normal, abnormal and a transitory phase.
 This should always be in combination with a large enough distribution of samples over the normal, 
-abnormal and transitory groups, a threshol of 40%-40%-20% of all samples would be ideal. 
+abnormal and transitory groups, a threshold of 20% for the transitory phase would be ideal. 
 
 Concretely this is valid for :
 - model 2,3 and 4 of the valves 
