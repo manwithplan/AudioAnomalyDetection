@@ -162,7 +162,7 @@ The following results were achieved for all machine types:
 
 ![](Images/KMeans_anomaly_distribution_per_model-Fan.png)
 
-<center>
+<div align="center">
  
 |  Fan       | Model 1  | Model 2  | Model 3  | Model 4  |
 | ---------- | -------- | -------- | -------- | -------- | 
@@ -170,11 +170,11 @@ The following results were achieved for all machine types:
 | Abnormal   | 73%      | 100%     | 99%      | 100%     |
 | transitory | 71%      | 75%      | 71%      | 58%      |
  
-</center>
+</div>
  
 ![](Images/Anomaly_Distribution_per_Model type-Slider.png)
  
-<center>
+<div align="center">
  
 |  Slider    | Model 1  | Model 2  | Model 3  | Model 4  |
 | ---------- | -------- | -------- | -------- | -------- | 
@@ -182,11 +182,11 @@ The following results were achieved for all machine types:
 | Abnormal   | 97%      | 99%      | 78%      | 86%      |
 | transitory | 99%      | 94%      | 71%      | 84%      |
  
-</center>
+</div>
  
 ![](Images/anomaly_distribution_per_model_using_mel_spectrogram_instead_of_cepstral_coëfficient-Pump.png)
  
-<center>
+<div align="center">
  
 |  Pump      | Model 1  | Model 2  | Model 3  | Model 4  |
 | ---------- | -------- | -------- | -------- | -------- | 
@@ -194,11 +194,11 @@ The following results were achieved for all machine types:
 | Abnormal   | 97%      | 100%     | 98%      | 95%      |
 | transitory | 94%      | 95%      | 99%      | 92%      |
  
-</center>
+</div>
  
 ![](Images/KMeans_for_the_different_Valve_models-16_clusters.png)
  
-<center>
+<div align="center">
  
 |  Valve     | Model 1  | Model 2  | Model 3  | Model 4  |
 | ---------- | -------- | -------- | -------- | -------- | 
@@ -206,7 +206,7 @@ The following results were achieved for all machine types:
 | Abnormal   | 99%      | 10%      | 10%      | 10%      |
 | transitory | 70%      | 85%      | 88%      | 90%      |
  
-</center>
+</div>
 
 ### Interpretation
 
