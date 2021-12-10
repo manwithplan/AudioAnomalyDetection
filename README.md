@@ -214,11 +214,13 @@ In this case an optimal result would have amost perfect normal an abnormal score
 Transitory phase between 50% and 95%. My conclusion is that allthough far from perfect for all the 
 machines, using Unsupervised Learning for the model and machine types for which good results
 are achieved detection can be almost perfect for both normal, abnormal and a transitory phase.
+This should always be in combination with a large enough distribution of samples over the normal, 
+abnormal and transitory groups, a threshol of 40%-40%-20% of all samples would be ideal. 
 
 Concretely this is valid for :
 - model 2,3 and 4 of the valves 
 - model 1 and 2 of the sliders
-- all models of the pumps
+- No models of the pomps because of a bad distribution.
 - None for the valves.
 
 These results and models can be implemented in a tree like structure where detection for each machine and model
