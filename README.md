@@ -95,6 +95,10 @@ For this the ideal cluster would look like this.
 Where there are 3 clusters, 1 containing almost all normal samples, one containing almost all abnormal samples
 and on containg a smaller sample of both, describing a transitory phase.
 
+Rather than use scoring metrics, as was done in a previous report when working with Supervised Learning, in these cases
+the risk of overfitting is not present and a simple accuracy score combined with the graph distribution as above had 
+the preference.
+
 Furthermore, on each model the elbow method was used to calculate both optimal number of clusters and which feature
 to use. In the examples below we can see the difference between using *mel spectrograms* and *mel frequency cepstral
 coëfficient*
@@ -138,9 +142,46 @@ Where the first graph still seems to give a meaningless grouping, the last 3 are
 we were looking for, as described above. If you look at the Model Types section, you can see this corresponds to the results 
 found there.
 
+At times the distinction between the different clusters could be improved by working with more clusters.
 
+![](Images/Valve.png)
+![](Images/Valve_more_clusters.png)
 
+In the first graph no division can be made between transitory state, normal and abnormal.
+When increasing the number of clusters, we can group the clusters together and get a meaningful result that way.
 
+### Results
 
+The following results were achieved for all machine types:
 
+![](Images/KMeans_anomaly_distribution_per_model-Fan.png)
 
+|  Fan       | Model 1  | Model 2  | Model 3  | Model 4  |
+| ---------- | -------- | -------- | -------- | -------- | 
+| Normal     | 67%      | 100%     | 100%     | 100%     |
+| Abnormal   | 73%      | 100%     | 99%      | 100%     |
+| transitory | 71%      | 75%      | 71%      | 58%      |
+
+![](Images/Anomaly_Distribution_per_Model type-Slider.png)
+
+|  Slider    | Model 1  | Model 2  | Model 3  | Model 4  |
+| ---------- | -------- | -------- | -------- | -------- | 
+| Normal     | 100%     | 98%      | 75%      | 88%      |
+| Abnormal   | 97%      | 99%      | 78%      | 86%      |
+| transitory | 99%      | 94%      | 71%      | 84%      |
+
+![](Images/anomaly_distribution_per_model_using_mel_spectrogram_instead_of_cepstral_coëfficient-Pump.png)
+
+|  Pump      | Model 1  | Model 2  | Model 3  | Model 4  |
+| ---------- | -------- | -------- | -------- | -------- | 
+| Normal     | 100%     | 92%      | 100%     | 100%     |
+| Abnormal   | 97%      | 100%     | 98%      | 95%      |
+| transitory | 94%      | 95%      | 99%      | 92%      |
+
+![](Images/KMeans_for_the_different_Valve_models-16_clusters.png)
+
+|  Valve     | Model 1  | Model 2  | Model 3  | Model 4  |
+| ---------- | -------- | -------- | -------- | -------- | 
+| Normal     | 99%      | 80%      | 90%      | 90%      |
+| Abnormal   | 99%      | 10%      | 10%      | 10%      |
+| transitory | 70%      | 85%      | 88%      | 90%      |
