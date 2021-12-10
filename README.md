@@ -172,7 +172,7 @@ The following results were achieved for all machine types:
  
 </div>
  
-![](Images/Anomaly_Distribution_per_Model type-Slider.png)
+![](Images/Anomaly_Distribution_per_Model_type-Slider.png)
  
 <div align="center">
  
