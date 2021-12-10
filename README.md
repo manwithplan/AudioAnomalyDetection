@@ -103,6 +103,8 @@ Furthermore, on each model the elbow method was used to calculate both optimal n
 to use. In the examples below we can see the difference between using *mel spectrograms* and *mel frequency cepstral
 coëfficient*
 
+spectrogram         |  mfcc
+:-------------------------:|:-------------------------:
 ![](Images/elbow_Curve-mel_spect-Fans.png) | ![](Images/elbow_Curve-mfcc-Fans.png)
 
 For each algorithm the optimal types were selected, by finding the best *bend* opf the curve as it represents the most 
