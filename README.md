@@ -150,6 +150,12 @@ At times the distinction between the different clusters could be improved by wor
 In the first graph no division can be made between transitory state, normal and abnormal.
 When increasing the number of clusters, we can group the clusters together and get a meaningful result that way.
 
+### Choice of model
+
+For all machines and model types an optimization was run for both feature type and model type.
+For the valves the most meaningful model was the Gaussian Mixture Model, possibly due to it's suitability to work
+with a large set of features. For all others the KMeans algorithms gave the best result.
+
 ### Results
 
 The following results were achieved for all machine types:
@@ -185,3 +191,39 @@ The following results were achieved for all machine types:
 | Normal     | 99%      | 80%      | 90%      | 90%      |
 | Abnormal   | 99%      | 10%      | 10%      | 10%      |
 | transitory | 70%      | 85%      | 88%      | 90%      |
+
+
+### Interpretation
+
+In this case an optimal result would have amost perfect normal an abnormal scores and a 
+Transitory phase between 50% and 95%. My conclusion is that allthough far from perfect for all the 
+machines, using Unsupervised Learning for the model and machine types for which good results
+are achieved detection can be almost perfect for both normal, abnormal and a transitory phase.
+
+Concretely this is valid for :
+- model 2,3 and 4 of the valves 
+- model 1 and 2 of the sliders
+- all models of the pumps
+- None for the valves.
+
+### Technical Details
+
+This software makes extensive use of the following Python libraries: 
+
+- sklearn
+- plotly
+- pandas
+- numpy
+- matplotlib
+- os
+- librosa
+- ast
+- tqdm
+
+### Installation
+
+- Clone the repository / download the files. Open your terminal and navigate to this directory.
+- Install dependencies with `pip install -r requirements.txt`.
+- Open the notebook of choice, and execute all the cells.
+- Watch the magic happen!
+
