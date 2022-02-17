@@ -89,15 +89,17 @@ Because the data is already labeled we can use the labelling to interpret the cl
 has been expressed to find a distinction between *normal* and *abnormal* functioning of the machines, as well as
 a *transitory* state in which the machines should have maintenance in stead of repair.
 
-For this the ideal cluster would look like this.
+We concluded that finding this distribution would allow us to tackle the detection.
 
 ![](Images/ideal_dist.png)
 
-Where there are 3 clusters, 1 containing almost all normal samples, one containing almost all abnormal samples
-and on containg a smaller sample of both, describing a transitory phase.
+Where there are 3 clusters:
+- 1 containing almost all normal samples, 
+- 1 containing almost all abnormal samples,
+- 1 containg a smaller sample of both, describing a transitory phase where inspection is required.
 
 Rather than use scoring metrics, as was done in a previous report when working with Supervised Learning, in these cases
-the risk of overfitting is not present and a simple accuracy score combined with the graph distribution as above had 
+the risk of overfitting is not present and the accuracy score combined with the graph distribution as above had 
 the preference.
 
 Furthermore, on each model the elbow method was used to calculate both optimal number of clusters and which feature
