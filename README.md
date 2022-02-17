@@ -3,7 +3,7 @@ Project for detecting machine malfunction from audio files.
 
 ## Exploring the Data
 
-The data comprises of 10 second sound samples that recorded normal or abnormal features of 
+The data consists of 10 second sound samples that recorded normal or abnormal features of 
 machines during production. There are four types of machines : valves, pumps, fans and slide rails.
 Each machine has samples of 4 different models of the same type.
 
@@ -20,7 +20,7 @@ The device the client will be using for the signal detection are the TAMAGO-03 m
 
 ![](Images/mic-array.jpg)
 
- Each microphone is directed towards a machine, and picks that signale up louder that the others,
+ Each microphone is directed towards a machine, and picks that signal up louder than the others,
  represented here.
  
  ![](Images/signal_per_channel.png)
@@ -30,11 +30,12 @@ The device the client will be using for the signal detection are the TAMAGO-03 m
 ![](Images/acc_per_channel.png)
 
 Our ideal pipeline would be to split the channel, and use the optimal channel for each machine.
+This would reduce the *bleeding* of unwanted sounds into our signal
 For each machine a seperate detection is made optimizing the results.
 
 ### PreProcessing
 
-Each signal is converted into unique mel spectrograms that look like these:
+Each signal is converted into it's mel spectrograms that look like these:
 
 ![](Images/spectrograms.jpg)
 
@@ -71,7 +72,7 @@ Calculating the average of these time intervals per sound sample gave a realisti
 ![](Images/avg_cutoff.png)
 
 applying a threshold over the averages automatically cuts the top of the abnormale group on th right.
-This is a group of about 9% of all valve malfunctions that are detected with 100% precision almost immediately.
+This is a group of about 19% of all valve malfunctions that are detected with 100% precision almost immediately.
 
 After this normal detections are used to complement accuracy of the other malfunctions.
 
@@ -79,8 +80,8 @@ After this normal detections are used to complement accuracy of the other malfun
 
 The next part of the project focused on applying unsupervised learning to the data.
 Because of the nature of unsupervised learning, training algorithms will give a number of clusters.
-It is our mission to interpret the meaning of these clusters and inverstigate whether they answer the
-concrete needs of the clients.
+It is our mission to interpret the meaning of these clusters and inverstigate whether they represent
+useful information.
 
 ### Metrics
 
