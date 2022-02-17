@@ -168,7 +168,7 @@ The results are formatted as such
 
 <div align="center">
  
-|  Valve     | Model 1  | 
+|  Valve     | Model #  | 
 | ---------- | -------- | 
 | Normal     | % of normal samples |
 | Abnormal   | % of abnormal samples |
