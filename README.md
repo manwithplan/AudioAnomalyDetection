@@ -164,7 +164,17 @@ with a large set of features. For all others the KMeans algorithms gave the best
 
 ### Results
 
-The following results were achieved for all machine types:
+The results are formatted as such
+
+<div align="center">
+ 
+|  Valve     | Model 1  | 
+| ---------- | -------- | 
+| Normal     | % of normal samples |
+| Abnormal   | % of abnormal samples |
+| Transitory | % of normal samples |
+ 
+</div>
 
 ![](Images/KMeans_anomaly_distribution_per_model-Fan.png)
 
@@ -174,7 +184,7 @@ The following results were achieved for all machine types:
 | ---------- | -------- | -------- | -------- | -------- | 
 | Normal     | 67%      | 100%     | 100%     | 100%     |
 | Abnormal   | 73%      | 100%     | 99%      | 100%     |
-| transitory | 71%      | 75%      | 71%      | 58%      |
+| Transitory | 71%      | 75%      | 71%      | 58%      |
  
 </div>
  
@@ -186,7 +196,7 @@ The following results were achieved for all machine types:
 | ---------- | -------- | -------- | -------- | -------- | 
 | Normal     | 100%     | 98%      | 75%      | 88%      |
 | Abnormal   | 97%      | 99%      | 78%      | 86%      |
-| transitory | 99%      | 94%      | 71%      | 84%      |
+| Transitory | 99%      | 94%      | 71%      | 84%      |
  
 </div>
  
@@ -198,7 +208,7 @@ The following results were achieved for all machine types:
 | ---------- | -------- | -------- | -------- | -------- | 
 | Normal     | 100%     | 92%      | 100%     | 100%     |
 | Abnormal   | 97%      | 100%     | 98%      | 95%      |
-| transitory | 94%      | 95%      | 99%      | 92%      |
+| Transitory | 94%      | 95%      | 99%      | 92%      |
  
 </div>
  
@@ -210,18 +220,16 @@ The following results were achieved for all machine types:
 | ---------- | -------- | -------- | -------- | -------- | 
 | Normal     | 99%      | 80%      | 90%      | 90%      |
 | Abnormal   | 99%      | 10%      | 10%      | 10%      |
-| transitory | 70%      | 85%      | 88%      | 90%      |
+| Transitory | 70%      | 85%      | 88%      | 90%      |
  
 </div>
 
 ### Interpretation
 
-In this case an optimal result would have amost perfect normal an abnormal scores and a 
-Transitory phase between 50% and 95%. My conclusion is that allthough far from perfect for all the 
-machines, using Unsupervised Learning for the model and machine types for which good results
-are achieved detection can be almost perfect for both normal, abnormal and a transitory phase.
-This should always be in combination with a large enough distribution of samples over the normal, 
-abnormal and transitory groups, a threshold of 20% for the transitory phase would be ideal. 
+What we want is the following distribution for the detection:
+- Normal state cluster of 95-100%
+- Abnormal state cluster of 95-100%
+- Transitory state cluster of 50-100%
 
 Concretely this is valid for :
 - model 2,3 and 4 of the valves 
