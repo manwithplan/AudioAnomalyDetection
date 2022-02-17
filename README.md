@@ -152,6 +152,8 @@ At times the distinction between the different clusters could be improved by wor
 ![](Images/Valve_more_clusters.png)
 
 In the first graph no division can be made between transitory state, normal and abnormal.
+In the second graph we can see that cluster 10 holds almost only abnormal samples.
+We can group the other clusters between a fully normal group and a group of both normal and abnormal.
 When increasing the number of clusters, we can group the clusters together and get a meaningful result that way.
 
 ### Choice of model
